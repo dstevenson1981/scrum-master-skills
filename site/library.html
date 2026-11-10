@@ -71,6 +71,15 @@ header .lede { font-size: 1.13rem; }
 .cycle .when { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .cycle .ev { color: var(--ink); font-weight: 500; font-size: 0.98rem; }
 .cycle .sk { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); overflow-wrap: anywhere; }
+.cycle.three { grid-template-columns: repeat(3, 1fr) !important; }
+.cycle.three a { border-top: 0 !important; border-left: 1px solid var(--line) !important; }
+.cycle.three a:first-child { border-left: 0 !important; }
+.cycle-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+@media (max-width: 560px) {
+  .cycle.three { grid-template-columns: 1fr !important; }
+  .cycle.three a { border-left: 0 !important; border-top: 1px solid var(--line) !important; }
+  .cycle.three a:first-child { border-top: 0 !important; }
+}
 
 /* filter */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -153,7 +162,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   <header>
     <span class="eyebrow">Agile36 · Scrum Master class</span>
     <h1>Scrum Master Skill Library</h1>
-    <p class="lede">AI skills for the work a Scrum Master does every sprint: every Scrum event, risks and impediments, backlog and estimation, metrics, and stakeholders. Install once, then use them in Claude, GitHub Copilot, ChatGPT or any other assistant.</p>
+    <p class="lede">AI skills for the work a Scrum Master does every sprint: every Scrum and SAFe event, team dynamics and facilitation, risks and impediments, backlog and estimation, metrics, and stakeholders. Install once, then use them in Claude, GitHub Copilot, ChatGPT or any other assistant.</p>
     <div class="facts" id="facts"></div>
   </header>
 
@@ -169,6 +178,12 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
       <a href="#skill-scrum-of-scrums"><span class="when">2–3× a week</span><span class="ev">Scrum of Scrums</span><span class="sk">scrum-of-scrums</span></a>
       <a href="#skill-sprint-review"><span class="when">Last day</span><span class="ev">Sprint Review</span><span class="sk">sprint-review</span></a>
       <a href="#skill-scrum-retrospective"><span class="when">Last day</span><span class="ev">Retrospective</span><span class="sk">scrum-retrospective</span></a>
+    </nav>
+    <p class="cycle-label">And across the Planning Interval in SAFe</p>
+    <nav class="cycle three" aria-label="SAFe events">
+      <a href="#skill-pi-planning"><span class="when">PI start</span><span class="ev">PI Planning</span><span class="sk">pi-planning</span></a>
+      <a href="#skill-art-sync"><span class="when">Weekly</span><span class="ev">Coach, PO &amp; ART Sync</span><span class="sk">art-sync</span></a>
+      <a href="#skill-inspect-and-adapt"><span class="when">PI end</span><span class="ev">Inspect &amp; Adapt</span><span class="sk">inspect-and-adapt</span></a>
     </nav>
   </section>
 
@@ -325,6 +340,45 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "inRepo": false
  },
  {
+  "slug": "pi-planning",
+  "category": "SAFe",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Prepare a team for PI Planning: capacity, PI objectives, dependencies, ROAM, confidence vote",
+  "needs": "Nothing",
+  "try": "PI Planning is in two weeks and it's my team's first. What do we need ready?",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "art-sync",
+  "category": "SAFe",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Coach Sync, PO Sync and ART Sync: what to bring and how to stop status-meeting drift",
+  "needs": "Nothing",
+  "try": "Our ART Sync has turned into a 90-minute status meeting. How do I fix it, and what should I bring?",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "inspect-and-adapt",
+  "category": "SAFe",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Inspect and Adapt: PI System Demo, predictability, problem-solving workshop",
+  "needs": "Nothing",
+  "try": "Our team planned 40 business value points and achieved 29. Calculate our predictability and prep the problem-solving workshop.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
   "slug": "scrum-role-coach",
   "category": "Role and coaching",
   "level": "beginner",
@@ -374,6 +428,71 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "author": "Hieu T. Luu",
   "repo": null,
   "license": "MIT (Hieu T. Luu)",
+  "inRepo": true
+ },
+ {
+  "slug": "working-agreements",
+  "category": "Team and facilitation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Team chartering: purpose, working agreements and a first Definition of Done",
+  "needs": "Nothing",
+  "try": "We're a brand-new team of 7 starting Monday. Plan a 90-minute chartering session.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "team-conflict",
+  "category": "Team and facilitation",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Coach through conflict between team members, with the PO or a manager; scripts the conversation",
+  "needs": "Nothing",
+  "try": "Two senior developers argue in every refinement and the rest of the team goes quiet. How do I handle it?",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "facilitation-toolkit",
+  "category": "Team and facilitation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Pick and run a technique: 1-2-4-All, 15% Solutions, TRIZ, dot voting, Fist of Five",
+  "needs": "Nothing",
+  "try": "The same two people dominate every meeting. Give me a technique for our next refinement.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "team-health-check",
+  "category": "Team and facilitation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Run a squad health check or psychological safety pulse and turn it into one experiment",
+  "needs": "Nothing",
+  "try": "Morale feels low since the reorg. Help me run a health check with my team.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
+ },
+ {
+  "slug": "remote-facilitation",
+  "category": "Team and facilitation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Run events well for remote and hybrid teams: setup, tools, time zones, engagement",
+  "needs": "Nothing",
+  "try": "Half my team is in the office and half is remote, and the remote people never speak. Fix our retro.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -439,6 +558,19 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "author": "Hieu T. Luu",
   "repo": null,
   "license": "MIT (Hieu T. Luu)",
+  "inRepo": true
+ },
+ {
+  "slug": "protect-the-sprint",
+  "category": "Risks and impediments",
+  "level": "beginner",
+  "optional": false,
+  "job": "Handle mid-sprint requests and scope creep; draft the reply to the stakeholder",
+  "needs": "Nothing",
+  "try": "A VP just asked two of my developers to drop everything for an urgent report. Help me respond.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -544,6 +676,19 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "repo": "https://github.com/borghei/Claude-Skills",
   "license": "MIT + Commons Clause",
   "inRepo": false
+ },
+ {
+  "slug": "metrics-conversation",
+  "category": "Metrics and forecasting",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Talk leadership out of velocity targets and team comparisons; offer better measures",
+  "needs": "Nothing",
+  "try": "My director wants to rank our 4 teams by velocity every month. Prepare me for that conversation.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "CC BY 4.0",
+  "inRepo": true
  },
  {
   "slug": "stakeholder-map",

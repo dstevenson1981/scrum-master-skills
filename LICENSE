@@ -5,8 +5,8 @@ Commons Attribution 4.0 International License (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 
 That covers:
-  - skills/daily-scrum, skills/sprint-review, skills/scrum-retrospective,
-    skills/impediment-log, skills/planning-poker
+  - every skill in skills/ whose LICENSE file names Agile36 (the skills
+    with "author": "Agile36" in library.json)
   - lab/, site/, README.md, LIBRARY.md, library.json
   - tools/
 

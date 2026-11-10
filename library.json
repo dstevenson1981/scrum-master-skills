@@ -101,6 +101,45 @@
       "try_prompt": "(inside a git repo) Build a retro data pack for the last two weeks."
     },
     {
+      "install_name": "pi-planning",
+      "category": "SAFe",
+      "job": "Prepare a team for PI Planning: capacity, PI objectives, dependencies, ROAM, confidence vote",
+      "level": "intermediate",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/pi-planning"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "PI Planning is in two weeks and it's my team's first. What do we need ready?"
+    },
+    {
+      "install_name": "art-sync",
+      "category": "SAFe",
+      "job": "Coach Sync, PO Sync and ART Sync: what to bring and how to stop status-meeting drift",
+      "level": "intermediate",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/art-sync"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "Our ART Sync has turned into a 90-minute status meeting. How do I fix it, and what should I bring?"
+    },
+    {
+      "install_name": "inspect-and-adapt",
+      "category": "SAFe",
+      "job": "Inspect and Adapt: PI System Demo, predictability, problem-solving workshop",
+      "level": "intermediate",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/inspect-and-adapt"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "Our team planned 40 business value points and achieved 29. Calculate our predictability and prep the problem-solving workshop."
+    },
+    {
       "install_name": "scrum-role-coach",
       "category": "Role and coaching",
       "job": "The Scrum Master role: stances, servant leadership, anti-patterns, onboarding, health check",
@@ -151,6 +190,71 @@
       },
       "license": "MIT (Hieu T. Luu), copied with credit",
       "try_prompt": "Adopt this team: 'Mobile Squad', 2-week sprints. Set up the workspace."
+    },
+    {
+      "install_name": "working-agreements",
+      "category": "Team and facilitation",
+      "job": "Team chartering: purpose, working agreements and a first Definition of Done",
+      "level": "beginner",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/working-agreements"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "We're a brand-new team of 7 starting Monday. Plan a 90-minute chartering session."
+    },
+    {
+      "install_name": "team-conflict",
+      "category": "Team and facilitation",
+      "job": "Coach through conflict between team members, with the PO or a manager; scripts the conversation",
+      "level": "intermediate",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/team-conflict"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "Two senior developers argue in every refinement and the rest of the team goes quiet. How do I handle it?"
+    },
+    {
+      "install_name": "facilitation-toolkit",
+      "category": "Team and facilitation",
+      "job": "Pick and run a technique: 1-2-4-All, 15% Solutions, TRIZ, dot voting, Fist of Five",
+      "level": "beginner",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/facilitation-toolkit"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "The same two people dominate every meeting. Give me a technique for our next refinement."
+    },
+    {
+      "install_name": "team-health-check",
+      "category": "Team and facilitation",
+      "job": "Run a squad health check or psychological safety pulse and turn it into one experiment",
+      "level": "beginner",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/team-health-check"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "Morale feels low since the reorg. Help me run a health check with my team."
+    },
+    {
+      "install_name": "remote-facilitation",
+      "category": "Team and facilitation",
+      "job": "Run events well for remote and hybrid teams: setup, tools, time zones, engagement",
+      "level": "beginner",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/remote-facilitation"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "Half my team is in the office and half is remote, and the remote people never speak. Fix our retro."
     },
     {
       "install_name": "impediment-log",
@@ -218,6 +322,19 @@
       },
       "license": "MIT (Hieu T. Luu), copied with credit",
       "try_prompt": "Set up a risk register for our payments migration and add the top five risks."
+    },
+    {
+      "install_name": "protect-the-sprint",
+      "category": "Risks and impediments",
+      "job": "Handle mid-sprint requests and scope creep; draft the reply to the stakeholder",
+      "level": "beginner",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/protect-the-sprint"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "A VP just asked two of my developers to drop everything for an urgent report. Help me respond."
     },
     {
       "install_name": "planning-poker",
@@ -325,6 +442,19 @@
       },
       "license": "MIT + Commons Clause",
       "try_prompt": "Draft Q1 OKRs for a team whose main problem is slow releases."
+    },
+    {
+      "install_name": "metrics-conversation",
+      "category": "Metrics and forecasting",
+      "job": "Talk leadership out of velocity targets and team comparisons; offer better measures",
+      "level": "intermediate",
+      "needs": "Nothing",
+      "source": {
+        "local": "skills/metrics-conversation"
+      },
+      "license": "CC BY 4.0",
+      "author": "Agile36",
+      "try_prompt": "My director wants to rank our 4 teams by velocity every month. Prepare me for that conversation."
     },
     {
       "install_name": "stakeholder-map",

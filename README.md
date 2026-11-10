@@ -1,8 +1,9 @@
 # Agile36 Scrum Master Skills
 
 A library of AI skills for Scrum Masters, plus a hands-on class for building
-your own. Thirty core skills cover every Scrum event, risks and impediments,
-backlog and estimation, metrics, stakeholders and tools. They work in Claude,
+your own. Forty core skills cover every Scrum event, SAFe events, team
+dynamics and facilitation, risks and impediments, backlog and estimation,
+metrics, stakeholders and tools. They work in Claude,
 GitHub Copilot, ChatGPT and any other assistant.
 
 ## Install
@@ -52,8 +53,9 @@ Edit `library.json`, then run `python3 tools/build_docs.py` to refresh
 
 ## Credits
 
-Agile36 wrote `daily-scrum`, `sprint-review`, `scrum-retrospective`,
-`impediment-log` and `planning-poker`. Those skills, the lab, the page and the
+Agile36 wrote 15 of the skills: the Scrum event and SAFe skills, the team and
+facilitation skills, `impediment-log`, `planning-poker`, `protect-the-sprint`
+and `metrics-conversation`. Those skills, the lab, the page and the
 tools are licensed [CC BY 4.0](LICENSE): share and adapt them, including
 commercially, with credit to Agile36.
 

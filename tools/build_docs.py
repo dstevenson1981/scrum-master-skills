@@ -35,7 +35,7 @@ one_liner = f"curl -fsSL https://raw.githubusercontent.com/{repo}/main/tools/ins
 
 md = [f"# Agile36 Scrum Master Skill Library", "",
       f"{len(core)} skills for the jobs a Scrum Master does every sprint, plus "
-      f"{len(skills) - len(core)} optional ones. Every Scrum event has its own skill. "
+      f"{len(skills) - len(core)} optional ones. Every Scrum event and SAFe event has its own skill. "
       "Each one is pinned to the exact version Agile36 reviewed.", ""]
 for c in cats:
     md += [f"## {c}", "", "| Skill | Job | Level | Needs |", "|---|---|---|---|"]

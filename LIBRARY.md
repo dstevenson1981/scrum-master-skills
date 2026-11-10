@@ -1,6 +1,6 @@
 # Agile36 Scrum Master Skill Library
 
-30 skills for the jobs a Scrum Master does every sprint, plus 4 optional ones. Every Scrum event has its own skill. Each one is pinned to the exact version Agile36 reviewed.
+40 skills for the jobs a Scrum Master does every sprint, plus 4 optional ones. Every Scrum event and SAFe event has its own skill. Each one is pinned to the exact version Agile36 reviewed.
 
 ## Scrum events
 
@@ -14,6 +14,14 @@
 | **scrum-of-scrums** | Scrum of Scrums: coordinate 2-5 teams on one product | Beginner | Nothing |
 | **sprint-retrospective** | Retro data pack from git history: velocity, cycle time, churn hotspots | Intermediate | Python 3 + a git repository |
 
+## SAFe
+
+| Skill | Job | Level | Needs |
+|---|---|---|---|
+| **pi-planning** | Prepare a team for PI Planning: capacity, PI objectives, dependencies, ROAM, confidence vote | Intermediate | Nothing |
+| **art-sync** | Coach Sync, PO Sync and ART Sync: what to bring and how to stop status-meeting drift | Intermediate | Nothing |
+| **inspect-and-adapt** | Inspect and Adapt: PI System Demo, predictability, problem-solving workshop | Intermediate | Nothing |
+
 ## Role and coaching
 
 | Skill | Job | Level | Needs |
@@ -22,6 +30,16 @@
 | **agile-coach** | Agile coaching: framework choice, maturity assessment, transformation roadmap | Intermediate | Nothing (optional scorers need Python 3) |
 | **problem-solver** | Diagnose a recurring problem before fixing it: problem statement, verified root causes | Intermediate | A project folder (keeps notes) |
 | **scrum-workflow** | Scrum Master of record: runs a team's sprints with memory across sessions | Advanced | A project folder (keeps notes in _project/scrum-master/) |
+
+## Team and facilitation
+
+| Skill | Job | Level | Needs |
+|---|---|---|---|
+| **working-agreements** | Team chartering: purpose, working agreements and a first Definition of Done | Beginner | Nothing |
+| **team-conflict** | Coach through conflict between team members, with the PO or a manager; scripts the conversation | Intermediate | Nothing |
+| **facilitation-toolkit** | Pick and run a technique: 1-2-4-All, 15% Solutions, TRIZ, dot voting, Fist of Five | Beginner | Nothing |
+| **team-health-check** | Run a squad health check or psychological safety pulse and turn it into one experiment | Beginner | Nothing |
+| **remote-facilitation** | Run events well for remote and hybrid teams: setup, tools, time zones, engagement | Beginner | Nothing |
 
 ## Risks and impediments
 
@@ -32,6 +50,7 @@
 | **post-mortem** | Blameless review after an incident, missed launch or failed sprint | Beginner | Nothing |
 | **dependency-map** | Cross-team dependencies: risk-ranked blocker list and a graph | Intermediate | Nothing (optional graph tool needs Python 3) |
 | **project-manager** | Project risk register (RAID), plans, scope changes, status for delivery | Advanced | A project folder (keeps notes in _project/) |
+| **protect-the-sprint** | Handle mid-sprint requests and scope creep; draft the reply to the stakeholder | Beginner | Nothing |
 
 ## Backlog and estimation
 
@@ -50,6 +69,7 @@
 | **scrum-analytics** | Velocity forecasts (Monte Carlo), sprint health score, retro action tracking | Intermediate | Python 3 + sprint data as JSON (sample included) |
 | **cycle-time-analyzer** | Flow metrics: lead time, cycle time, throughput, WIP aging, cumulative flow | Intermediate | Python 3 + an issue status export |
 | **brainstorm-okrs** | Draft and score team OKRs with a counter-metric | Beginner | Nothing (optional validator needs Python 3) |
+| **metrics-conversation** | Talk leadership out of velocity targets and team comparisons; offer better measures | Intermediate | Nothing |
 
 ## Stakeholders and communication
 
@@ -120,15 +140,24 @@ Use a made-up team. Never paste real names or company data into a class exercise
 | backlog-refinement | "Refine this story: 'As an admin I want a reporting dashboard so I can see everything.'" |
 | scrum-of-scrums | "We have 3 teams on one mobile app and they keep breaking each other's releases. How do I set up a Scrum of Scrums?" |
 | sprint-retrospective | "(inside a git repo) Build a retro data pack for the last two weeks." |
+| pi-planning | "PI Planning is in two weeks and it's my team's first. What do we need ready?" |
+| art-sync | "Our ART Sync has turned into a 90-minute status meeting. How do I fix it, and what should I bring?" |
+| inspect-and-adapt | "Our team planned 40 business value points and achieved 29. Calculate our predictability and prep the problem-solving workshop." |
 | scrum-role-coach | "I'm joining a new team as Scrum Master next week. What should my first two weeks look like?" |
 | agile-coach | "Our org runs 'Scrum' but nothing has changed in a year. Assess our maturity and suggest a 90-day coaching plan." |
 | problem-solver | "Our team misses its Sprint Goal almost every sprint and nobody agrees why. Help me diagnose it." |
 | scrum-workflow | "Adopt this team: 'Mobile Squad', 2-week sprints. Set up the workspace." |
+| working-agreements | "We're a brand-new team of 7 starting Monday. Plan a 90-minute chartering session." |
+| team-conflict | "Two senior developers argue in every refinement and the rest of the team goes quiet. How do I handle it?" |
+| facilitation-toolkit | "The same two people dominate every meeting. Give me a technique for our next refinement." |
+| team-health-check | "Morale feels low since the reorg. Help me run a health check with my team." |
+| remote-facilitation | "Half my team is in the office and half is remote, and the remote people never speak. Fix our retro." |
 | impediment-log | "We've been blocked 4 days waiting on the platform team for a staging environment. Log it and help me escalate." |
 | pre-mortem | "We launch the new checkout in 3 weeks. Run a pre-mortem with me." |
 | post-mortem | "Our release last Friday took the app down for 2 hours. Help me run a blameless post-mortem." |
 | dependency-map | "Three teams depend on each other for the Q3 release. Map the dependencies and show the riskiest ones." |
 | project-manager | "Set up a risk register for our payments migration and add the top five risks." |
+| protect-the-sprint | "A VP just asked two of my developers to drop everything for an urgent report. Help me respond." |
 | planning-poker | "One senior developer anchors every estimate. How should I run planning poker?" |
 | story-splitting | "Split this story: 'Users can pay by card, PayPal or invoice, with refunds.'" |
 | story-mapping | "Build a story map for a mobile app's first-time onboarding and draw the MVP line." |
@@ -137,6 +166,7 @@ Use a made-up team. Never paste real names or company data into a class exercise
 | scrum-analytics | "Run a velocity forecast on the sample sprint data and tell me what we can safely commit to next sprint." |
 | cycle-time-analyzer | "Analyze the sample board data: where is work getting stuck?" |
 | brainstorm-okrs | "Draft Q1 OKRs for a team whose main problem is slow releases." |
+| metrics-conversation | "My director wants to rank our 4 teams by velocity every month. Prepare me for that conversation." |
 | stakeholder-map | "Map the stakeholders for our billing rollout. The finance director is skeptical." |
 | status-update-generator | "Write this week's status update for our sponsor. We're yellow: one blocker, two risks." |
 | team-communications | "Write a short update to leadership: we're moving from 3-week to 2-week sprints next month." |
@@ -163,15 +193,24 @@ Skills marked *Agile36* were written for this class. Skills from MIT-licensed re
 | backlog-refinement | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | scrum-of-scrums | [skills-on-ai/skills-on-ai](https://github.com/skills-on-ai/skills-on-ai) | none stated | author's repo @ `e8f587d` |
 | sprint-retrospective | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
+| pi-planning | Agile36 | CC BY 4.0 | this repo |
+| art-sync | Agile36 | CC BY 4.0 | this repo |
+| inspect-and-adapt | Agile36 | CC BY 4.0 | this repo |
 | scrum-role-coach | [byersboi/claude-agile-skills](https://github.com/byersboi/claude-agile-skills) | none stated | author's repo @ `a18f726` |
 | agile-coach | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | problem-solver | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
 | scrum-workflow | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
+| working-agreements | Agile36 | CC BY 4.0 | this repo |
+| team-conflict | Agile36 | CC BY 4.0 | this repo |
+| facilitation-toolkit | Agile36 | CC BY 4.0 | this repo |
+| team-health-check | Agile36 | CC BY 4.0 | this repo |
+| remote-facilitation | Agile36 | CC BY 4.0 | this repo |
 | impediment-log | Agile36 | CC BY 4.0 | this repo |
 | pre-mortem | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | post-mortem | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | dependency-map | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | project-manager | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
+| protect-the-sprint | Agile36 | CC BY 4.0 | this repo |
 | planning-poker | Agile36 | CC BY 4.0 | this repo |
 | story-splitting | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | story-mapping | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
@@ -180,6 +219,7 @@ Skills marked *Agile36* were written for this class. Skills from MIT-licensed re
 | scrum-analytics | Alireza Rezvani | MIT (Alireza Rezvani) | this repo |
 | cycle-time-analyzer | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | brainstorm-okrs | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
+| metrics-conversation | Agile36 | CC BY 4.0 | this repo |
 | stakeholder-map | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | status-update-generator | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | team-communications | Alireza Rezvani | MIT (Alireza Rezvani) | this repo |
