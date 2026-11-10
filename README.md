@@ -27,6 +27,7 @@ other chat tools, and to pick skills, see [LIBRARY.md](LIBRARY.md).
 │   ├── test-prompts.md        test-and-fix worksheet
 │   └── DEMO-KIT.md            present your two favorite skills
 ├── site/library.html          the library as a web page
+├── workbench/                 chat with any skill from a local web page (see workbench/README.md)
 └── tools/
     ├── install_library.py     installs the library into any tool
     ├── export_skill.py        ports a single skill (e.g. your own) to other tools
