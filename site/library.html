@@ -1,0 +1,772 @@
+<title>Scrum Master Skill Library</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column. Sprint-cycle strip of event skills up top, then category-filtered skill cards, install tabs, credits. Agile36 site palette. */
+:root {
+  --bg: #f6f9fd; --surface: #ffffff; --ink: #1f2c4a; --body: #475569; --muted: #64748b;
+  --line: rgba(31, 44, 74, 0.12); --tint: rgba(31, 44, 74, 0.045);
+  --accent: #d97706; --accent-soft: rgba(217, 119, 6, 0.10);
+  --lvl-beg: #0f766e; --lvl-beg-bg: rgba(15, 118, 110, 0.10);
+  --lvl-int: #1d4ed8; --lvl-int-bg: rgba(29, 78, 216, 0.09);
+  --lvl-adv: #7c2d92; --lvl-adv-bg: rgba(124, 45, 146, 0.09);
+  --code-bg: #1f2c4a; --code-fg: #f1f5f9; --code-line: rgba(255,255,255,0.22);
+  --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1424; --surface: #141d32; --ink: #e8edf6; --body: #b6c0d1; --muted: #8a96ab;
+    --line: rgba(232, 237, 246, 0.12); --tint: rgba(232, 237, 246, 0.05);
+    --accent: #f59e0b; --accent-soft: rgba(245, 158, 11, 0.13);
+    --lvl-beg: #5eead4; --lvl-beg-bg: rgba(94, 234, 212, 0.12);
+    --lvl-int: #93b4ff; --lvl-int-bg: rgba(147, 180, 255, 0.13);
+    --lvl-adv: #e0a3f0; --lvl-adv-bg: rgba(224, 163, 240, 0.13);
+    --code-bg: #0a101d; --code-fg: #e8edf6; --code-line: rgba(255,255,255,0.18);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1424; --surface: #141d32; --ink: #e8edf6; --body: #b6c0d1; --muted: #8a96ab;
+  --line: rgba(232, 237, 246, 0.12); --tint: rgba(232, 237, 246, 0.05);
+  --accent: #f59e0b; --accent-soft: rgba(245, 158, 11, 0.13);
+  --lvl-beg: #5eead4; --lvl-beg-bg: rgba(94, 234, 212, 0.12);
+  --lvl-int: #93b4ff; --lvl-int-bg: rgba(147, 180, 255, 0.13);
+  --lvl-adv: #e0a3f0; --lvl-adv-bg: rgba(224, 163, 240, 0.13);
+  --code-bg: #0a101d; --code-fg: #e8edf6; --code-line: rgba(255,255,255,0.18);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 48px 72px; display: flex; flex-direction: column; gap: 64px;
+}
+section { display: flex; flex-direction: column; gap: 20px; }
+h1, h2, h3 { color: var(--ink); font-weight: 500; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.1rem); line-height: 1.08; }
+h2 { font-size: 1.6rem; line-height: 1.2; }
+h3 { font-size: 1.08rem; line-height: 1.3; letter-spacing: -0.015em; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+code { font-family: var(--mono); font-size: 0.88em; }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.section-head { display: flex; flex-direction: column; gap: 8px; max-width: 68ch; }
+.section-head p { color: var(--muted); }
+
+header { display: flex; flex-direction: column; gap: 18px; max-width: 72ch; }
+header .lede { font-size: 1.13rem; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 500; }
+
+/* sprint cycle strip */
+.cycle { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.cycle a { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 16px; text-decoration: none; color: inherit; border-left: 1px solid var(--line); min-width: 0; }
+.cycle a:first-child { border-left: 0; }
+.cycle a:hover { background: var(--tint); }
+.cycle .when { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.cycle .ev { color: var(--ink); font-weight: 500; font-size: 0.98rem; }
+.cycle .sk { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); overflow-wrap: anywhere; }
+
+/* filter */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter { font: 500 0.86rem var(--sans); color: var(--body); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.filter span { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-left: 4px; }
+.filter[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.filter[aria-pressed="true"] span { color: var(--bg); opacity: 0.7; }
+
+.cat { display: flex; flex-direction: column; gap: 14px; }
+.cat h3 { display: flex; align-items: baseline; gap: 10px; }
+.cat h3 small { font-family: var(--mono); font-size: 0.75rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.deck { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.slug { font-family: var(--mono); font-size: 0.92rem; font-weight: 500; color: var(--ink); overflow-wrap: anywhere; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.beginner { color: var(--lvl-beg); background: var(--lvl-beg-bg); }
+.chip.intermediate { color: var(--lvl-int); background: var(--lvl-int-bg); }
+.chip.advanced { color: var(--lvl-adv); background: var(--lvl-adv-bg); }
+.chip.optional { color: var(--muted); background: var(--tint); }
+.chip.a36 { color: var(--accent); background: var(--accent-soft); }
+.job { color: var(--body); font-size: 0.95rem; }
+.needs { font-size: 0.84rem; color: var(--muted); }
+.needs b { color: var(--ink); font-weight: 500; }
+.try { margin-top: auto; background: var(--tint); border-radius: 8px; padding: 11px 12px; display: flex; flex-direction: column; gap: 6px; }
+.try-label { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.try-label span { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.try q { font-size: 0.9rem; color: var(--ink); quotes: "\201C" "\201D"; }
+.copy { font: 500 0.76rem var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+.copy.done { color: var(--accent); border-color: var(--accent); }
+
+.versus { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.versus > div { padding: 18px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.versus > div + div { border-left: 1px solid var(--line); }
+.versus .ex { font-size: 0.88rem; color: var(--muted); }
+.versus code { color: var(--ink); }
+
+.cmd { display: flex; align-items: center; gap: 12px; background: var(--code-bg); color: var(--code-fg); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+.cmd code { font-family: var(--mono); font-size: 0.86rem; overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0; }
+.cmd .copy { background: transparent; color: var(--code-fg); border-color: var(--code-line); flex-shrink: 0; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line); }
+.tab { font: 500 0.92rem var(--sans); color: var(--muted); background: none; border: 0; padding: 10px 14px; border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.panel { padding-top: 18px; display: flex; flex-direction: column; gap: 12px; max-width: 80ch; }
+.step { display: flex; gap: 10px; }
+.step b { color: var(--ink); font-weight: 500; white-space: nowrap; }
+.note { font-size: 0.9rem; color: var(--muted); }
+.flags { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.88rem; color: var(--muted); }
+.flags code { color: var(--ink); background: var(--tint); padding: 1px 6px; border-radius: 4px; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 620px; }
+th, td { text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.mono { font-family: var(--mono); color: var(--ink); }
+footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex; flex-direction: column; gap: 8px; }
+
+@media (max-width: 860px) {
+  .cycle { grid-template-columns: repeat(3, 1fr); }
+  .cycle a:nth-child(4) { border-left: 0; }
+  .cycle a:nth-child(n+4) { border-top: 1px solid var(--line); }
+  .versus { grid-template-columns: 1fr; }
+  .versus > div + div { border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 560px) {
+  .wrap { padding-block: 32px 56px; gap: 48px; }
+  .cycle { grid-template-columns: 1fr 1fr; }
+  .cycle a { border-left: 0; border-top: 1px solid var(--line); }
+  .cycle a:nth-child(even) { border-left: 1px solid var(--line); }
+  .cycle a:nth-child(-n+2) { border-top: 0; }
+  .deck { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Agile36 · Scrum Master class</span>
+    <h1>Scrum Master Skill Library</h1>
+    <p class="lede">AI skills for the work a Scrum Master does every sprint: every Scrum event, risks and impediments, backlog and estimation, metrics, and stakeholders. Install once, then use them in Claude, GitHub Copilot, ChatGPT or any other assistant.</p>
+    <div class="facts" id="facts"></div>
+  </header>
+
+  <section aria-labelledby="cycle-h">
+    <div class="section-head">
+      <span class="eyebrow">A skill for every event</span>
+      <h2 id="cycle-h">The sprint, event by event</h2>
+    </div>
+    <nav class="cycle" aria-label="Scrum events">
+      <a href="#skill-backlog-refinement"><span class="when">Ongoing</span><span class="ev">Refinement</span><span class="sk">backlog-refinement</span></a>
+      <a href="#skill-sprint-plan"><span class="when">Day 1</span><span class="ev">Sprint Planning</span><span class="sk">sprint-plan</span></a>
+      <a href="#skill-daily-scrum"><span class="when">Every day</span><span class="ev">Daily Scrum</span><span class="sk">daily-scrum</span></a>
+      <a href="#skill-scrum-of-scrums"><span class="when">2–3× a week</span><span class="ev">Scrum of Scrums</span><span class="sk">scrum-of-scrums</span></a>
+      <a href="#skill-sprint-review"><span class="when">Last day</span><span class="ev">Sprint Review</span><span class="sk">sprint-review</span></a>
+      <a href="#skill-scrum-retrospective"><span class="when">Last day</span><span class="ev">Retrospective</span><span class="sk">scrum-retrospective</span></a>
+    </nav>
+  </section>
+
+  <section aria-labelledby="skills-h">
+    <div class="section-head">
+      <span class="eyebrow">The library</span>
+      <h2 id="skills-h">Every skill, by job</h2>
+      <p>Each card ends with a prompt you can paste to try it. Use a made-up team, never real names or company data.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    <div id="cats" style="display:flex; flex-direction:column; gap:36px;"></div>
+  </section>
+
+  <section aria-labelledby="vs-h">
+    <div class="section-head">
+      <span class="eyebrow">Which one do I use?</span>
+      <h2 id="vs-h">Skills that look alike</h2>
+    </div>
+    <div class="versus">
+      <div><h3>One meeting, or many sprints?</h3><p class="ex">The event skills prepare one meeting today. <code>scrum-workflow</code> runs a team's sprints over time and remembers them between sessions.</p></div>
+      <div><h3>Which retro skill?</h3><p class="ex"><code>scrum-retrospective</code> plans and facilitates the meeting. <code>sprint-retrospective</code> builds a data pack from git history to bring to it.</p></div>
+      <div><h3>Blocker or risk?</h3><p class="ex"><code>impediment-log</code> for something blocking the sprint now. <code>pre-mortem</code> for a launch that could fail. <code>project-manager</code> for a project's risk register.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="inst-h">
+    <div class="section-head">
+      <span class="eyebrow">Install</span>
+      <h2 id="inst-h">Install in the tool you use</h2>
+      <p>Paste one command into a terminal. Nothing to download first, no GitHub account needed. No terminal? Your instructor will hand out the files.</p>
+    </div>
+    <div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div id="panels"></div>
+    </div>
+    <div class="flags">
+      <span>Add after <code>python3 -</code>:</span>
+      <span><code>--list</code> see every skill</span>
+      <span><code>--category "Scrum events"</code> one category</span>
+      <span><code>--only daily-scrum,sprint-review</code> pick some</span>
+      <span><code>--with-optional</code> add the optional ones</span>
+      <span><code>--force</code> update</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="cred-h">
+    <div class="section-head">
+      <span class="eyebrow">Credits</span>
+      <h2 id="cred-h">Where each skill comes from</h2>
+      <p>Agile36 wrote the skills marked Agile36. MIT-licensed skills ship in the Agile36 repo with their licenses. All others download from their author's repository at the version Agile36 reviewed.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Skill</th><th>Author</th><th>License</th><th>Ships from</th></tr></thead>
+        <tbody id="credits"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+/*SKILLS-START*/const SKILLS = [
+ {
+  "slug": "sprint-plan",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Sprint Planning: goal, real capacity, commit vs stretch, dependencies, risks, Definition of Done",
+  "needs": "Nothing (optional plan audit needs Python 3)",
+  "try": "Plan Sprint 4: 2 weeks, 6 developers, one on leave Thursday and Friday. Our last three velocities were 21, 18 and 24.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "daily-scrum",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Daily Scrum: formats, keeping it to 15 minutes, a quick Sprint Goal check",
+  "needs": "Nothing",
+  "try": "Our daily standup has turned into a 40-minute status report to our manager. How do I fix it?",
+  "author": "Agile36",
+  "repo": null,
+  "license": "Agile36",
+  "inRepo": true
+ },
+ {
+  "slug": "sprint-review",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Sprint Review: agenda, showing the Increment, getting real stakeholder feedback",
+  "needs": "Nothing",
+  "try": "Plan a 60-minute Sprint Review. Two of five items are Done and our stakeholders usually skip it.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "Agile36",
+  "inRepo": true
+ },
+ {
+  "slug": "scrum-retrospective",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Sprint Retrospective: pick a format, facilitate it, make actions stick",
+  "needs": "Nothing",
+  "try": "The same three complaints come up every retro and nothing changes. Plan our next retro.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "Agile36",
+  "inRepo": true
+ },
+ {
+  "slug": "backlog-refinement",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Backlog Refinement: INVEST checks, vertical splits, Definition of Ready",
+  "needs": "Nothing (optional scorer needs Python 3)",
+  "try": "Refine this story: 'As an admin I want a reporting dashboard so I can see everything.'",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "scrum-of-scrums",
+  "category": "Scrum events",
+  "level": "beginner",
+  "optional": false,
+  "job": "Scrum of Scrums: coordinate 2-5 teams on one product",
+  "needs": "Nothing",
+  "try": "We have 3 teams on one mobile app and they keep breaking each other's releases. How do I set up a Scrum of Scrums?",
+  "author": "skills-on-ai/skills-on-ai",
+  "repo": "https://github.com/skills-on-ai/skills-on-ai",
+  "license": "none stated",
+  "inRepo": false
+ },
+ {
+  "slug": "sprint-retrospective",
+  "category": "Scrum events",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Retro data pack from git history: velocity, cycle time, churn hotspots",
+  "needs": "Python 3 + a git repository",
+  "try": "(inside a git repo) Build a retro data pack for the last two weeks.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "scrum-role-coach",
+  "category": "Role and coaching",
+  "level": "beginner",
+  "optional": false,
+  "job": "The Scrum Master role: stances, servant leadership, anti-patterns, onboarding, health check",
+  "needs": "Nothing",
+  "try": "I'm joining a new team as Scrum Master next week. What should my first two weeks look like?",
+  "author": "byersboi/claude-agile-skills",
+  "repo": "https://github.com/byersboi/claude-agile-skills",
+  "license": "none stated",
+  "inRepo": false
+ },
+ {
+  "slug": "agile-coach",
+  "category": "Role and coaching",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Agile coaching: framework choice, maturity assessment, transformation roadmap",
+  "needs": "Nothing (optional scorers need Python 3)",
+  "try": "Our org runs 'Scrum' but nothing has changed in a year. Assess our maturity and suggest a 90-day coaching plan.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "problem-solver",
+  "category": "Role and coaching",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Diagnose a recurring problem before fixing it: problem statement, verified root causes",
+  "needs": "A project folder (keeps notes)",
+  "try": "Our team misses its Sprint Goal almost every sprint and nobody agrees why. Help me diagnose it.",
+  "author": "Hieu T. Luu",
+  "repo": null,
+  "license": "MIT (Hieu T. Luu)",
+  "inRepo": true
+ },
+ {
+  "slug": "scrum-workflow",
+  "category": "Role and coaching",
+  "level": "advanced",
+  "optional": false,
+  "job": "Scrum Master of record: runs a team's sprints with memory across sessions",
+  "needs": "A project folder (keeps notes in _project/scrum-master/)",
+  "try": "Adopt this team: 'Mobile Squad', 2-week sprints. Set up the workspace.",
+  "author": "Hieu T. Luu",
+  "repo": null,
+  "license": "MIT (Hieu T. Luu)",
+  "inRepo": true
+ },
+ {
+  "slug": "impediment-log",
+  "category": "Risks and impediments",
+  "level": "beginner",
+  "optional": false,
+  "job": "Log, triage and escalate a blocker; draft the escalation message",
+  "needs": "Nothing",
+  "try": "We've been blocked 4 days waiting on the platform team for a staging environment. Log it and help me escalate.",
+  "author": "Agile36",
+  "repo": null,
+  "license": "Agile36",
+  "inRepo": true
+ },
+ {
+  "slug": "pre-mortem",
+  "category": "Risks and impediments",
+  "level": "beginner",
+  "optional": false,
+  "job": "Pre-mortem: imagine the launch failed, surface risks, give each an owner",
+  "needs": "Nothing (optional sorter needs Python 3)",
+  "try": "We launch the new checkout in 3 weeks. Run a pre-mortem with me.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "post-mortem",
+  "category": "Risks and impediments",
+  "level": "beginner",
+  "optional": false,
+  "job": "Blameless review after an incident, missed launch or failed sprint",
+  "needs": "Nothing",
+  "try": "Our release last Friday took the app down for 2 hours. Help me run a blameless post-mortem.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "dependency-map",
+  "category": "Risks and impediments",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Cross-team dependencies: risk-ranked blocker list and a graph",
+  "needs": "Nothing (optional graph tool needs Python 3)",
+  "try": "Three teams depend on each other for the Q3 release. Map the dependencies and show the riskiest ones.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "project-manager",
+  "category": "Risks and impediments",
+  "level": "advanced",
+  "optional": false,
+  "job": "Project risk register (RAID), plans, scope changes, status for delivery",
+  "needs": "A project folder (keeps notes in _project/)",
+  "try": "Set up a risk register for our payments migration and add the top five risks.",
+  "author": "Hieu T. Luu",
+  "repo": null,
+  "license": "MIT (Hieu T. Luu)",
+  "inRepo": true
+ },
+ {
+  "slug": "planning-poker",
+  "category": "Backlog and estimation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Estimation: planning poker, story points, t-shirt sizing, when not to estimate",
+  "needs": "Nothing",
+  "try": "One senior developer anchors every estimate. How should I run planning poker?",
+  "author": "Agile36",
+  "repo": null,
+  "license": "Agile36",
+  "inRepo": true
+ },
+ {
+  "slug": "story-splitting",
+  "category": "Backlog and estimation",
+  "level": "beginner",
+  "optional": false,
+  "job": "Split oversized stories into thin vertical slices",
+  "needs": "Nothing",
+  "try": "Split this story: 'Users can pay by card, PayPal or invoice, with refunds.'",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "story-mapping",
+  "category": "Backlog and estimation",
+  "level": "beginner",
+  "optional": false,
+  "job": "User story map: journey, ranked tasks, release lines for an MVP",
+  "needs": "Nothing",
+  "try": "Build a story map for a mobile app's first-time onboarding and draw the MVP line.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "agile-product-owner",
+  "category": "Backlog and estimation",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Write user stories and acceptance criteria, break down epics",
+  "needs": "Nothing (optional story generator needs Python 3)",
+  "try": "Write user stories with acceptance criteria for 'customers can save a card for later'.",
+  "author": "Alireza Rezvani",
+  "repo": null,
+  "license": "MIT (Alireza Rezvani)",
+  "inRepo": true
+ },
+ {
+  "slug": "prioritization-frameworks",
+  "category": "Backlog and estimation",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Rank a backlog with RICE, ICE, MoSCoW or weighted scoring",
+  "needs": "Nothing (optional scorer needs Python 3)",
+  "try": "Help our Product Owner rank these 8 items with RICE. Ask me for what you need.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "scrum-analytics",
+  "category": "Metrics and forecasting",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Velocity forecasts (Monte Carlo), sprint health score, retro action tracking",
+  "needs": "Python 3 + sprint data as JSON (sample included)",
+  "try": "Run a velocity forecast on the sample sprint data and tell me what we can safely commit to next sprint.",
+  "author": "Alireza Rezvani",
+  "repo": null,
+  "license": "MIT (Alireza Rezvani)",
+  "inRepo": true
+ },
+ {
+  "slug": "cycle-time-analyzer",
+  "category": "Metrics and forecasting",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Flow metrics: lead time, cycle time, throughput, WIP aging, cumulative flow",
+  "needs": "Python 3 + an issue status export",
+  "try": "Analyze the sample board data: where is work getting stuck?",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "brainstorm-okrs",
+  "category": "Metrics and forecasting",
+  "level": "beginner",
+  "optional": false,
+  "job": "Draft and score team OKRs with a counter-metric",
+  "needs": "Nothing (optional validator needs Python 3)",
+  "try": "Draft Q1 OKRs for a team whose main problem is slow releases.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "stakeholder-map",
+  "category": "Stakeholders and communication",
+  "level": "beginner",
+  "optional": false,
+  "job": "Map stakeholders by power, interest and stance; plan engagement",
+  "needs": "Nothing (optional analyzer needs Python 3)",
+  "try": "Map the stakeholders for our billing rollout. The finance director is skeptical.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "status-update-generator",
+  "category": "Stakeholders and communication",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Weekly executive status: highlights, blockers, risks, asks",
+  "needs": "Nothing (optional generator needs Python 3)",
+  "try": "Write this week's status update for our sponsor. We're yellow: one blocker, two risks.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "team-communications",
+  "category": "Stakeholders and communication",
+  "level": "beginner",
+  "optional": false,
+  "job": "Internal updates, newsletters, FAQs, incident and leadership notes",
+  "needs": "Nothing",
+  "try": "Write a short update to leadership: we're moving from 3-week to 2-week sprints next month.",
+  "author": "Alireza Rezvani",
+  "repo": null,
+  "license": "MIT (Alireza Rezvani)",
+  "inRepo": true
+ },
+ {
+  "slug": "summarize-meeting",
+  "category": "Stakeholders and communication",
+  "level": "beginner",
+  "optional": false,
+  "job": "Turn notes or a transcript into decisions, owned action items, open questions",
+  "needs": "Nothing",
+  "try": "Here are my notes from Sprint Planning. Summarize decisions and action items. [paste notes]",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "daci-framework",
+  "category": "Stakeholders and communication",
+  "level": "beginner",
+  "optional": false,
+  "job": "Decision roles (Driver, Approver, Contributor, Informed) for stalled decisions",
+  "needs": "Nothing",
+  "try": "Nobody can decide whether we adopt Kanban for our support team. Set up a DACI for it.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "jira-expert",
+  "category": "Tools and scaling",
+  "level": "intermediate",
+  "optional": false,
+  "job": "Jira boards, workflows, JQL, automation and dashboards; audit a messy board",
+  "needs": "Nothing (optional audit tools need Python 3 + a Jira export)",
+  "try": "Write a JQL filter for everything in the current sprint that's been In Progress for more than 3 days.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "program-manager",
+  "category": "Tools and scaling",
+  "level": "advanced",
+  "optional": true,
+  "job": "Multi-team programs: charter, governance, cross-project dependencies, steering reports",
+  "needs": "Nothing (optional tools need Python 3)",
+  "try": "We're starting a 4-team program to replace our billing system. Draft the charter and governance cadence.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "quarterly-planning",
+  "category": "Tools and scaling",
+  "level": "intermediate",
+  "optional": true,
+  "job": "Quarter planning meetings: kickoff, weekly check-ins, mid-quarter carry/kill/pivot, close retro",
+  "needs": "Nothing (optional tools need Python 3)",
+  "try": "Plan the kickoff and weekly check-in rhythm for next quarter's OKRs.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ },
+ {
+  "slug": "agile-scrum-guide",
+  "category": "Reference",
+  "level": "beginner",
+  "optional": true,
+  "job": "Background reading: roles, artifacts, events, stories, estimation, metrics",
+  "needs": "Nothing",
+  "try": "Explain the difference between the Sprint Review and the Retrospective.",
+  "author": "majiayu000/claude-skill-registry-data",
+  "repo": "https://github.com/majiayu000/claude-skill-registry-data",
+  "license": "none stated",
+  "inRepo": false
+ },
+ {
+  "slug": "skill-security-auditor",
+  "category": "Reference",
+  "level": "intermediate",
+  "optional": true,
+  "job": "Check any skill for prompt injection, dangerous code or data leaks before installing it",
+  "needs": "Python 3",
+  "try": "Audit the skill folder I just downloaded before I install it.",
+  "author": "borghei/Claude-Skills",
+  "repo": "https://github.com/borghei/Claude-Skills",
+  "license": "MIT + Commons Clause",
+  "inRepo": false
+ }
+];
+const KIT_REPO = "dstevenson1981/scrum-master-skills";
+const ONE_LINER = "curl -fsSL https://raw.githubusercontent.com/dstevenson1981/scrum-master-skills/main/tools/install_library.py | python3 -";/*SKILLS-END*/
+
+const TOOLS = [
+  { id: "claude-code", name: "Claude Code", flag: "", then: "Start a new session. The skills load on their own when a request matches." },
+  { id: "claude-app", name: "Claude app", flag: " --target zip", then: "Upload each zip in the Claude app: Settings → Capabilities → Skills." },
+  { id: "copilot", name: "GitHub Copilot", flag: " --target copilot", then: "Copy the generated .github folder into your repository." },
+  { id: "any-chat", name: "ChatGPT, Gemini, others", flag: " --target plain", then: "Paste a .txt file as your first message, or save it as a custom GPT or Gem instruction." },
+];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const CATS = [...new Set(SKILLS.map(s => s.category))];
+const core = SKILLS.filter(s => !s.optional);
+
+document.getElementById("facts").innerHTML =
+  `<span><b>${core.length}</b> core skills</span><span><b>${SKILLS.length - core.length}</b> optional</span>` +
+  `<span><b>${CATS.length}</b> categories</span><span>Pinned to reviewed versions</span>`;
+
+function copyText(btn, text) {
+  const done = () => { btn.textContent = "Copied"; btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1600); };
+  const fallback = () => {
+    const target = btn.closest(".try, .cmd").querySelector("q, code");
+    const r = document.createRange(); r.selectNodeContents(target);
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    btn.textContent = "Press ⌘C";
+  };
+  try { navigator.clipboard.writeText(text).then(done).catch(fallback); } catch (e) { fallback(); }
+}
+
+const card = (s, i) => `
+  <article class="card" id="skill-${s.slug}">
+    <div class="card-top">
+      <span class="slug">${s.slug}</span>
+      <span class="chips">${s.license === "Agile36" ? '<span class="chip a36">Agile36</span>' : ""}<span class="chip ${s.level}">${s.level}</span>${s.optional ? '<span class="chip optional">optional</span>' : ""}</span>
+    </div>
+    <p class="job">${esc(s.job)}</p>
+    <p class="needs"><b>Needs:</b> ${esc(s.needs)}</p>
+    <div class="try">
+      <div class="try-label"><span>Try this</span><button class="copy" id="copy-try-${i}" data-i="${i}">Copy</button></div>
+      <q>${esc(s.try)}</q>
+    </div>
+  </article>`;
+
+document.getElementById("cats").innerHTML = CATS.map(c => {
+  const items = SKILLS.map((s, i) => [s, i]).filter(([s]) => s.category === c);
+  return `<div class="cat" data-cat="${esc(c)}"><h3>${esc(c)} <small>${items.length}</small></h3>
+    <div class="deck">${items.map(([s, i]) => card(s, i)).join("")}</div></div>`;
+}).join("");
+document.querySelectorAll(".try .copy").forEach(b => b.addEventListener("click", () => copyText(b, SKILLS[b.dataset.i].try)));
+
+const filters = document.getElementById("filters");
+filters.innerHTML = [["All", SKILLS.length], ...CATS.map(c => [c, SKILLS.filter(s => s.category === c).length])]
+  .map(([c, n], i) => `<button class="filter" id="filter-${i}" data-cat="${esc(c)}" aria-pressed="${i === 0}">${esc(c)}<span>${n}</span></button>`).join("");
+filters.addEventListener("click", e => {
+  const b = e.target.closest(".filter"); if (!b) return;
+  filters.querySelectorAll(".filter").forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.querySelectorAll(".cat").forEach(el => { el.hidden = b.dataset.cat !== "All" && el.dataset.cat !== b.dataset.cat; });
+});
+document.querySelectorAll(".cycle a").forEach(a => a.addEventListener("click", () => {
+  filters.querySelector(".filter").click();
+}));
+
+const tabs = document.getElementById("tabs"), panels = document.getElementById("panels");
+tabs.innerHTML = TOOLS.map((t, i) =>
+  `<button class="tab" role="tab" id="tab-${t.id}" aria-controls="panel-${t.id}" aria-selected="${i === 0}">${t.name}</button>`).join("");
+panels.innerHTML = TOOLS.map((t, i) => {
+  const cmd = ONE_LINER + t.flag;
+  return `<div class="panel" role="tabpanel" id="panel-${t.id}" aria-labelledby="tab-${t.id}" ${i === 0 ? "" : "hidden"}>
+    <div class="cmd"><code>${esc(cmd)}</code><button class="copy" id="copy-cmd-${t.id}" data-cmd="${esc(cmd)}">Copy</button></div>
+    <p class="step"><b>Then</b><span>${esc(t.then)}</span></p>
+    ${t.id === "claude-code" ? "" : `<p class="note">Skills that need nothing work fully here. Skills with Python tools still give advice${t.id === "claude-app" ? ", and can run their tools when code execution is on" : ", but can't run their tools"}.</p>`}
+  </div>`;
+}).join("");
+function selectTab(id) {
+  TOOLS.forEach(t => {
+    document.getElementById("tab-" + t.id).setAttribute("aria-selected", t.id === id);
+    document.getElementById("panel-" + t.id).hidden = t.id !== id;
+  });
+  try { localStorage.setItem("sm-lib-tab", id); } catch (e) {}
+}
+tabs.addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) selectTab(b.id.slice(4)); });
+document.querySelectorAll(".cmd .copy").forEach(b => b.addEventListener("click", () => copyText(b, b.dataset.cmd)));
+try { const saved = localStorage.getItem("sm-lib-tab"); if (saved && TOOLS.some(t => t.id === saved)) selectTab(saved); } catch (e) {}
+
+document.getElementById("credits").innerHTML = SKILLS.map(s => `
+  <tr><td class="mono">${s.slug}</td>
+  <td>${s.repo ? `<a href="${s.repo}" target="_blank" rel="noopener">${esc(s.author)}</a>` : esc(s.author)}</td>
+  <td>${esc(s.license)}</td>
+  <td>${s.inRepo ? `<a href="https://github.com/${KIT_REPO}" target="_blank" rel="noopener">Agile36 repo</a>` : "Author's repo"}</td></tr>`).join("");
+
+document.getElementById("footer").innerHTML = `
+  <p>Source, installer and class lab: <a href="https://github.com/${KIT_REPO}" target="_blank" rel="noopener">github.com/${KIT_REPO}</a></p>
+  <p>Want more? <a href="https://github.com/borghei/Claude-Skills" target="_blank" rel="noopener">borghei/Claude-Skills</a> has 400 skills, and the <a href="https://majiayu000.github.io/claude-skill-registry/" target="_blank" rel="noopener">Claude Skill Registry</a> is a searchable catalog. Before installing any skill, read its SKILL.md and open its scripts, or run <code>skill-security-auditor</code> on it.</p>`;
+</script>

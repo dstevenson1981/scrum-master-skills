@@ -1,0 +1,7 @@
+skill-zips/
+copilot-export/
+agents-export/
+plain-export/
+out/
+__pycache__/
+.DS_Store
