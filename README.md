@@ -1,7 +1,7 @@
 # Agile36 Scrum Master Skills
 
 A library of AI skills for Scrum Masters, plus a hands-on class for building
-your own. Forty core skills cover every Scrum event, SAFe events, team
+your own. Forty-five core skills cover every Scrum event, SAFe events, sprint planning, team
 dynamics and facilitation, risks and impediments, backlog and estimation,
 metrics, stakeholders and tools. They work in Claude,
 GitHub Copilot, ChatGPT and any other assistant.
@@ -9,7 +9,7 @@ GitHub Copilot, ChatGPT and any other assistant.
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/dstevenson1981/scrum-master-skills/main/tools/install_library.py | python3 -
+curl -fsSL https://raw.githubusercontent.com/mmlynxxx-spec/scrum-master-skills/main/tools/install_library.py | python3 -
 ```
 
 That installs the core skills into Claude Code. For the Claude app, Copilot or
@@ -27,6 +27,8 @@ other chat tools, and to pick skills, see [LIBRARY.md](LIBRARY.md).
 │   ├── test-prompts.md        test-and-fix worksheet
 │   └── DEMO-KIT.md            present your two favorite skills
 ├── site/library.html          the library as a web page
+├── site/scrum-master-playbook.html  offline playbook: every skill ready to copy into Copilot
+├── workbench/                 chat with any skill from a local web page (see workbench/README.md)
 └── tools/
     ├── install_library.py     installs the library into any tool
     ├── export_skill.py        ports a single skill (e.g. your own) to other tools
