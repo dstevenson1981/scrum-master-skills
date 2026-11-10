@@ -218,7 +218,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
     <div class="section-head">
       <span class="eyebrow">Credits</span>
       <h2 id="cred-h">Where each skill comes from</h2>
-      <p>Agile36 wrote the skills marked Agile36. MIT-licensed skills ship in the Agile36 repo with their licenses. All others download from their author's repository at the version Agile36 reviewed.</p>
+      <p>Agile36 wrote the skills marked Agile36 and shares them, with the lab and tools, under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>: reuse and adapt them with credit. MIT-licensed skills ship in the Agile36 repo with their licenses. All others download from their author's repository at the version Agile36 reviewed.</p>
     </div>
     <div class="table-wrap">
       <table>
@@ -256,7 +256,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "try": "Our daily standup has turned into a 40-minute status report to our manager. How do I fix it?",
   "author": "Agile36",
   "repo": null,
-  "license": "Agile36",
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -269,7 +269,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "try": "Plan a 60-minute Sprint Review. Two of five items are Done and our stakeholders usually skip it.",
   "author": "Agile36",
   "repo": null,
-  "license": "Agile36",
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -282,7 +282,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "try": "The same three complaints come up every retro and nothing changes. Plan our next retro.",
   "author": "Agile36",
   "repo": null,
-  "license": "Agile36",
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -386,7 +386,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "try": "We've been blocked 4 days waiting on the platform team for a staging environment. Log it and help me escalate.",
   "author": "Agile36",
   "repo": null,
-  "license": "Agile36",
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -451,7 +451,7 @@ footer { font-size: 0.9rem; color: var(--muted); max-width: 72ch; display: flex;
   "try": "One senior developer anchors every estimate. How should I run planning poker?",
   "author": "Agile36",
   "repo": null,
-  "license": "Agile36",
+  "license": "CC BY 4.0",
   "inRepo": true
  },
  {
@@ -709,7 +709,7 @@ const card = (s, i) => `
   <article class="card" id="skill-${s.slug}">
     <div class="card-top">
       <span class="slug">${s.slug}</span>
-      <span class="chips">${s.license === "Agile36" ? '<span class="chip a36">Agile36</span>' : ""}<span class="chip ${s.level}">${s.level}</span>${s.optional ? '<span class="chip optional">optional</span>' : ""}</span>
+      <span class="chips">${s.author === "Agile36" ? '<span class="chip a36">Agile36</span>' : ""}<span class="chip ${s.level}">${s.level}</span>${s.optional ? '<span class="chip optional">optional</span>' : ""}</span>
     </div>
     <p class="job">${esc(s.job)}</p>
     <p class="needs"><b>Needs:</b> ${esc(s.needs)}</p>

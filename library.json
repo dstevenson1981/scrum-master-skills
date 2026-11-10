@@ -25,8 +25,9 @@
       "source": {
         "local": "skills/daily-scrum"
       },
-      "license": "Agile36",
-      "try_prompt": "Our daily standup has turned into a 40-minute status report to our manager. How do I fix it?"
+      "license": "CC BY 4.0",
+      "try_prompt": "Our daily standup has turned into a 40-minute status report to our manager. How do I fix it?",
+      "author": "Agile36"
     },
     {
       "install_name": "sprint-review",
@@ -37,8 +38,9 @@
       "source": {
         "local": "skills/sprint-review"
       },
-      "license": "Agile36",
-      "try_prompt": "Plan a 60-minute Sprint Review. Two of five items are Done and our stakeholders usually skip it."
+      "license": "CC BY 4.0",
+      "try_prompt": "Plan a 60-minute Sprint Review. Two of five items are Done and our stakeholders usually skip it.",
+      "author": "Agile36"
     },
     {
       "install_name": "scrum-retrospective",
@@ -49,8 +51,9 @@
       "source": {
         "local": "skills/scrum-retrospective"
       },
-      "license": "Agile36",
-      "try_prompt": "The same three complaints come up every retro and nothing changes. Plan our next retro."
+      "license": "CC BY 4.0",
+      "try_prompt": "The same three complaints come up every retro and nothing changes. Plan our next retro.",
+      "author": "Agile36"
     },
     {
       "install_name": "backlog-refinement",
@@ -158,8 +161,9 @@
       "source": {
         "local": "skills/impediment-log"
       },
-      "license": "Agile36",
-      "try_prompt": "We've been blocked 4 days waiting on the platform team for a staging environment. Log it and help me escalate."
+      "license": "CC BY 4.0",
+      "try_prompt": "We've been blocked 4 days waiting on the platform team for a staging environment. Log it and help me escalate.",
+      "author": "Agile36"
     },
     {
       "install_name": "pre-mortem",
@@ -224,8 +228,9 @@
       "source": {
         "local": "skills/planning-poker"
       },
-      "license": "Agile36",
-      "try_prompt": "One senior developer anchors every estimate. How should I run planning poker?"
+      "license": "CC BY 4.0",
+      "try_prompt": "One senior developer anchors every estimate. How should I run planning poker?",
+      "author": "Agile36"
     },
     {
       "install_name": "story-splitting",

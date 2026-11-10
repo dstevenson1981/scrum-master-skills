@@ -157,9 +157,9 @@ Skills marked *Agile36* were written for this class. Skills from MIT-licensed re
 | Skill | Author | License | Where it comes from |
 |---|---|---|---|
 | sprint-plan | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
-| daily-scrum | Agile36 | Agile36 | this repo |
-| sprint-review | Agile36 | Agile36 | this repo |
-| scrum-retrospective | Agile36 | Agile36 | this repo |
+| daily-scrum | Agile36 | CC BY 4.0 | this repo |
+| sprint-review | Agile36 | CC BY 4.0 | this repo |
+| scrum-retrospective | Agile36 | CC BY 4.0 | this repo |
 | backlog-refinement | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | scrum-of-scrums | [skills-on-ai/skills-on-ai](https://github.com/skills-on-ai/skills-on-ai) | none stated | author's repo @ `e8f587d` |
 | sprint-retrospective | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
@@ -167,12 +167,12 @@ Skills marked *Agile36* were written for this class. Skills from MIT-licensed re
 | agile-coach | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | problem-solver | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
 | scrum-workflow | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
-| impediment-log | Agile36 | Agile36 | this repo |
+| impediment-log | Agile36 | CC BY 4.0 | this repo |
 | pre-mortem | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | post-mortem | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | dependency-map | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | project-manager | Hieu T. Luu | MIT (Hieu T. Luu) | this repo |
-| planning-poker | Agile36 | Agile36 | this repo |
+| planning-poker | Agile36 | CC BY 4.0 | this repo |
 | story-splitting | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | story-mapping | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | agile-product-owner | Alireza Rezvani | MIT (Alireza Rezvani) | this repo |
@@ -190,6 +190,8 @@ Skills marked *Agile36* were written for this class. Skills from MIT-licensed re
 | quarterly-planning | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
 | agile-scrum-guide | [majiayu000/claude-skill-registry-data](https://github.com/majiayu000/claude-skill-registry-data) | none stated | author's repo @ `cc56cf7` |
 | skill-security-auditor | [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills) | MIT + Commons Clause | author's repo @ `25bf86b` |
+
+Agile36's own skills, lab and tools are licensed CC BY 4.0: reuse and adapt them freely, including commercially, with credit to Agile36. See `LICENSE`.
 
 Three skills were renamed so they don't clash: `scrum-role-coach`, `scrum-analytics` and `scrum-workflow` were all originally called `scrum-master`.
 

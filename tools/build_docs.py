@@ -20,7 +20,7 @@ cats = list(dict.fromkeys(s["category"] for s in skills))
 def author(s):
     src = s["source"]
     if "local" in src:
-        return "Agile36" if s["license"] == "Agile36" else s["license"].split("(")[1].split(")")[0]
+        return s.get("author") or s["license"].split("(")[1].split(")")[0]
     return src["repo"]
 
 
@@ -70,7 +70,9 @@ md += ["", "---", "", "## Sources and credit", "",
 for s in skills:
     where = "this repo" if "local" in s["source"] else f"author's repo @ `{s['source']['ref'][:7]}`"
     md.append(f"| {s['install_name']} | {author_link(s)} | {s['license'].split(',')[0]} | {where} |")
-md += ["", "Three skills were renamed so they don't clash: `scrum-role-coach`, `scrum-analytics` and "
+md += ["", "Agile36's own skills, lab and tools are licensed CC BY 4.0: reuse and adapt them freely, "
+       "including commercially, with credit to Agile36. See `LICENSE`.", "",
+       "Three skills were renamed so they don't clash: `scrum-role-coach`, `scrum-analytics` and "
        "`scrum-workflow` were all originally called `scrum-master`.", "",
        "## Want more?", "",
        "- [borghei/Claude-Skills](https://github.com/borghei/Claude-Skills): 400 skills, the source of many here",

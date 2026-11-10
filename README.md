@@ -53,5 +53,9 @@ Edit `library.json`, then run `python3 tools/build_docs.py` to refresh
 ## Credits
 
 Agile36 wrote `daily-scrum`, `sprint-review`, `scrum-retrospective`,
-`impediment-log` and `planning-poker`. Other skills belong to their authors;
-see [LIBRARY.md](LIBRARY.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+`impediment-log` and `planning-poker`. Those skills, the lab, the page and the
+tools are licensed [CC BY 4.0](LICENSE): share and adapt them, including
+commercially, with credit to Agile36.
+
+Other skills belong to their authors and keep their own licenses; see
+[LIBRARY.md](LIBRARY.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
