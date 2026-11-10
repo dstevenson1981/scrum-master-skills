@@ -9,7 +9,7 @@ GitHub Copilot, ChatGPT and any other assistant.
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/dstevenson1981/scrum-master-skills/main/tools/install_library.py | python3 -
+curl -fsSL https://raw.githubusercontent.com/mmlynxxx-spec/scrum-master-skills/main/tools/install_library.py | python3 -
 ```
 
 That installs the core skills into Claude Code. For the Claude app, Copilot or
